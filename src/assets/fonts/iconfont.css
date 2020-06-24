@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1592918698678'); /* IE9 */
+  src: url('iconfont.eot?t=1592918698678#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPQAAsAAAAAB9AAAAOBAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqDOIMYATYCJAMMCwgABCAFhG0HNRvdBsgOJaygwFBgAIJEPn1e9X5+GloyQyM9alU6Qy55gnmTenp93Nse4fBAf+rLBM9FeLU0AYtrUAsewBoU6AMVLNbuP+6dNhfgfEA5/dmmsdd51AUYBxTQWJsCCrRAEvSWw41X4dF1GAhAbQVvZJaaXQwlFhlFAOTc1tIAZcqErakmlAh5ycIU5IqMMl7DPAGwyf8++SIwUgIMWQIyMf+U0oz4B/NFSUekzsKlAB/PAUBcBlCAN4AFsip1laNhyhul1vVsfbEci2DGikoSPmZo5fQPD2AQIDlIpRYAuOMIA19sLDYoEXHWB1EAIAcoAFsAD0AE87y5DFOoZi1S+czuVpPp6dI3b4qhvr0A070M0V19vZLuedVot5fZbCXQHke2q7Vrdy6gu3ZpdOt2YB7t3Ll2Oxw6NXLaBSM71u1aSI6eHT1TvPbE6Ml1x0eO9Q9meW4f0mGz5bi6eU3mEnIw6KI9y76u5KEt4LwDyV/QNWp/bV9ne2kbefPizdrpV9OfPWSRpLp/oMaRkIGBTSNl/nBeOsM/+IMuKY5EkuTKymSYTqoqkTxM3nNBK2mDRtIsbW2IZ/5bfWTd2m65z/bv1fcd3grgek9e7GaYs9pllUu3Sw8i7kQ3uPuG6DqaLKQTw+ZNBqaDcS9jDEibWbdYXXfd0A2wWmmRpFU8OtvY9HtSbmWlvxv3Z+OLUdbxlOC+PH11+vKCtOWrA22+QkmjpbtRjwylFY0HpJ7uoXE/8Tc4Xvu+t25m9DelhgUAfFjkdMIPSj2L9mVQYkDEfxneso41SGKmqYbZmJWlisheCIIQyQsJ8c3xub9nPsQOQinhCBgKy4FScqayTG+Q0QgOyyntrRJQ85KGlmvMJaBIqgLgaRKAmOUsMGa4C9QsT6ks8xPILPAV5GZFFNRKo7kbarhGbeokgW8Q+WausZdrazKb9MwqqoPqQr6l09AgJElfWsoL1rYoF+Drn82m8SZeGGOKtaslUBT1nF4wG7lUOI43GMycRTC3802ib6soWiL9/PRlL/JtMhuhlkTAayDiNeM06sVp08TMRO82F6lzny/Ea9HJoIFQU1NXLcUTWLW1zwngy78FNU1valVzLc9YdWkRSCTS4+gJzIw4qeDgGWjKjGMp79eO10Tkq7VHwiKSH26kb6v3nd9ofL4tAGpkJxoxhBIW7KXN2MB2m5t5AAAAAA==') format('woff2'),
+  url('iconfont.woff?t=1592918698678') format('woff'),
+  url('iconfont.ttf?t=1592918698678') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1592918698678#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mima:before {
+  content: "\e608";
+}
+
+.icon-wode:before {
+  content: "\e602";
+}
+
