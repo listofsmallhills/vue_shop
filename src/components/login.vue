@@ -20,7 +20,6 @@
                     <el-button type="primary" @click='login'>登录</el-button>
                     <el-button type="info" @click='loginReset'>重置</el-button>
                 </el-form-item>
-
             </el-form>
         </div>
     </div>
@@ -51,9 +50,11 @@
 
         },
         methods: {
+            // 重置
             loginReset() {
                 this.$refs.loginRef.resetFields()
             },
+            // 登陆验证
             login() {
                 this.$refs.loginRef.validate(async valid => {
                     console.log(valid)
@@ -61,7 +62,7 @@
                     const { data: rep } = await this.$http.post('login', this.loginForm);
                     console.log(rep)
                     if (rep.meta.status !== 200) return this.$message.error('错了哦，这是一条错误消息');
-                    this.$message.success('恭喜你，这是一条成功消息');
+                    this.$message.success('登录成功');
                     window.sessionStorage.setItem('token', rep.data.token);
                     this.$router.push('/home')
                 })
