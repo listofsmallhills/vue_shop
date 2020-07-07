@@ -39,7 +39,8 @@
                         <el-button type="danger" icon="el-icon-delete" @click="configMessageBox(scope.row.id)">
                         </el-button>
                         <el-tooltip class="item" effect="dark" content="设置编辑" placement="top">
-                            <el-button type="warning" icon="el-icon-setting" size="mini"></el-button>
+                            <el-button type="warning" icon="el-icon-setting" size="mini"
+                                @click="showSettingDialogVisible(scope.row)"></el-button>
                         </el-tooltip>
                     </template>
                 </el-table-column>
@@ -90,6 +91,21 @@
             <span slot="footer" class="dialog-footer">
                 <el-button @click="editDialogVisible = false">取 消</el-button>
                 <el-button type="primary" @click="editUserSub">确 定</el-button>
+            </span>
+        </el-dialog>
+        <!-- 设置编辑 -->
+        <el-dialog title="分配角色" :visible.sync="settingDialogVisible" width="50%" @close="clearSelect">
+            <p>当前的用户:{{userInfo.username}}</p>
+            <p>当前的角色:{{userInfo.role_name}}</p>
+            <p>新角色:
+                <el-select v-model="selectId" placeholder="请选择">
+                    <el-option v-for="item in rolesList" :key="item.id" :label="item.roleName" :value="item.id">
+                    </el-option>
+                </el-select>
+            </p>
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="settingDialogVisible = false">取 消</el-button>
+                <el-button type="primary" @click="configNewRole">确 定</el-button>
             </span>
         </el-dialog>
     </div>
@@ -158,7 +174,11 @@
                         { required: true, message: '请输入手机名称', trigger: 'blur' },
                         { validator: checkPhone, trigger: 'blur' }
                     ],
-                }
+                },
+                settingDialogVisible: false,
+                userInfo: {},
+                rolesList: '',
+                selectId: ''
             }
         },
         created() {
@@ -256,7 +276,29 @@
                         message: '已取消删除'
                     });
                 });
-
+            },
+            async showSettingDialogVisible(userinfo) {
+                this.userInfo = userinfo
+                const { data: res } = await this.$http.get('roles')
+                if (res.meta.status !== 200) {
+                    return this.$message.error('获取角色列表失败')
+                }
+                // this.$message.success('获取角色列表成功成功')
+                this.rolesList = res.data
+                this.settingDialogVisible = true
+            },
+            // 新角色确认
+            async configNewRole() {
+                const { data: res } = await this.$http.put(`users/${this.userInfo.id}/role`,{rid:this.selectId})
+                if (res.meta.status !== 200) {
+                    return this.$message.error('角色修改失败')
+                }
+                this.$message.success('角色修改成功')
+                this.getUserList()
+                this.settingDialogVisible = false
+            },
+            clearSelect() {
+                this.selectId = ''
             }
         },
 
