@@ -8,20 +8,61 @@ import rights from '../components/power/rights.vue'
 import roles from '../components/power/roles.vue'
 import categories from '../components/good/cate.vue'
 import params from '../components/good/params.vue'
+import reports from '../components/report/report.vue'
+import goods from '../components/good/goods.vue'
+import addGood from '../components/good/addGood.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', redirect: '/login' },
-  { path: '/login', component: login },
   {
-    path: '/home', component: home, redirect: '/welcome',
+    path: '/',
+    redirect: '/login'
+  },
+  {
+    path: '/login',
+    component: login
+  },
+  {
+    path: '/home',
+    component: home,
+    redirect: '/welcome',
     children: [
-      { path: '/welcome', component: welcome },
-      { path: '/users', component: users },
-      { path: '/rights', component: rights },
-      { path: '/roles', component: roles },
-      { path: '/categories', component: categories },
-      { path: '/params', component: params },
+      {
+        path: '/welcome',
+        component: welcome
+      },
+      {
+        path: '/users',
+        component: users
+      },
+      {
+        path: '/rights',
+        component: rights
+      },
+      {
+        path: '/roles',
+        component: roles
+      },
+      {
+        path: '/categories',
+        component: categories
+      },
+      {
+        path: '/params',
+        component: params
+      },
+      {
+        path: '/goods',
+        component: goods
+      },
+      {
+        path: '/reports',
+        component: reports
+      },
+      {
+        path:'/goods/add',
+        component: addGood
+      }
     ]
   }
 

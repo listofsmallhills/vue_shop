@@ -116,7 +116,7 @@
 
     .toggle-button {
         display: flex;
-        background-color: beige;
+        background-color: #333744;
         font-size: 20px;
         justify-content: center;
         cursor: pointer;
