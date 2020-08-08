@@ -78,7 +78,7 @@
                         { required: true, message: '请输入重量', trigger: 'blur' },
                     ]
                 },
-                cateOptions: [],
+                cateOptions: [], 
                 cateProps: {
                     expandTrigger: 'hover',
                     value: 'cat_id',
